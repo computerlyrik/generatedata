@@ -22,7 +22,7 @@ docker run --name generatedata -d --link generatedata-mysql:db -p 80:80 computer
 
 Open (http://localhost/generatedata/install.php)
 
-For initial configuration settings see [Example settings.php](generatedata#example-settingsphp)
+For initial configuration settings see [Example settings.php]
 
 ### OnBuild
 
