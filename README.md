@@ -1,4 +1,4 @@
-# docker-generatedata
+# generatedata for Docker
 Docker packaging of generatedata
 
 ## Improvements
@@ -12,10 +12,10 @@ Docker packaging of generatedata
 ### OnBuild
 
 Given follwing directory layout
-
+```
 ./Dockerfile
 ./settings.php
-
+```
 and a Dockerfile
 
 ```
