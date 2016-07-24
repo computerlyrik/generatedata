@@ -43,6 +43,8 @@ FROM computerlyirk/generatedata
 
 #### Example settings.php
 
+Default data configuration for above example *plus generatedata-api enabled*
+
 ```php
 <?php
 
