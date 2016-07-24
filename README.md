@@ -9,24 +9,6 @@ Docker packaging of generatedata
 
 ## Usage
 
-### OnBuild
-
-Use to pre-confiure your personal containers with a private ```[settings.php](http://benkeen.github.io/generatedata/settingsFile.html)```.
-
-The file will automatically included in your container build, given the follwing directory layout
-
-```
-./Dockerfile
-./settings.php
-```
-and a Dockerfile like
-
-```
-FROM computerlyirk/generatedata
-```
-
-
-
 ### Run
 
 You will need an [mysql container](https://hub.docker.com/_/mysql/) to serve a database.
@@ -39,6 +21,45 @@ docker run --name generatedata -d --link generatedata-mysql:db -p 80:80 computer
 ```
 
 Open (http://localhost/generatedata/install.php)
+
+For initial configuration settings see [Example settings.php](example-settings-php)
+
+### OnBuild
+
+Use to pre-confiure your personal containers with a private `[settings.php](http://benkeen.github.io/generatedata/settingsFile.html)`.
+
+The file will automatically included in your container build, given the follwing directory layout
+
+```
+./Dockerfile
+./settings.php
+```
+
+#### Example Dockerfile
+
+```
+FROM computerlyirk/generatedata
+```
+
+#### Example settings.php
+
+```php
+<?php
+
+$dbHostname     = 'db';
+$dbName         = 'generatedata';
+$dbUsername     = 'root';
+$dbPassword     = '';
+$dbTablePrefix  = 'gd_';
+$encryptionSalt = 'furb4';
+
+$apiEnabled = true;
+
+
+?>
+```
+## Development
+
 
 ### Build
 
