@@ -11,30 +11,34 @@ Docker packaging of generatedata
 
 ### OnBuild
 
-Given follwing directory layout
+Use to pre-confiure your personal containers with a private ```[settings.php](http://benkeen.github.io/generatedata/settingsFile.html)```.
+
+The file will automatically included in your container build, given the follwing directory layout
+
 ```
 ./Dockerfile
 ./settings.php
 ```
-and a Dockerfile
+and a Dockerfile like
 
 ```
 FROM computerlyirk/generatedata
 ```
 
-The ```settings.php``` will automatically be used for generatedata.
+
 
 ### Run
 
-You will need an additional Mysql container to serve a database.
-*Do not use these settings in production* (especially the mysq container configuration)
+You will need an [mysql container](https://hub.docker.com/_/mysql/) to serve a database.
+
+**Do not use these settings in production** (especially the mysql container configuration)
 
 ```bash
 docker run --name generatedata-mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -e MYSQL_DATABASE=generatedata -d mysql:5.7 && \
 docker run --name generatedata -d --link generatedata-mysql:db -p 80:80 computerlyrik/generatedata
 ```
 
-Open http://localhost/generatedata/install.php
+Open (http://localhost/generatedata/install.php)
 
 ### Build
 
@@ -44,7 +48,7 @@ Open http://localhost/generatedata/install.php
 
 #### Build any released version
 
-docker build --build-arg generatedata_version=3.2.4
+```docker build --build-arg generatedata_version=3.2.4```
 
 
 
