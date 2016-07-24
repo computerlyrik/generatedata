@@ -70,8 +70,3 @@ $apiEnabled = true;
 #### Build any released version
 
 ```docker build --build-arg generatedata_version=3.2.4```
-
-
-
-## TODO
-- Add enable API as run parameter
