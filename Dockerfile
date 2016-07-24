@@ -19,3 +19,5 @@ RUN chown -R www-data /var/www/html
 WORKDIR /var/www/html/generatedata
 
 RUN composer install
+
+ONBUILD COPY settings.php /var/www/html/generatedata/settings.php
