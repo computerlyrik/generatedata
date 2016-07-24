@@ -13,7 +13,7 @@ RUN tar xzf /generatedata.tar.gz -C /var/www/html/
 RUN ln -s /var/www/html/generatedata-${generatedata_version} generatedata
 RUN chown -R www-data /var/www/html 
 
-# RUN a2enmod rewrite
+RUN a2enmod rewrite
 
 
 WORKDIR /var/www/html/generatedata
