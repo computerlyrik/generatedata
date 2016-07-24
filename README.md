@@ -20,7 +20,7 @@ docker run --name generatedata-mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -e MYSQL_
 docker run --name generatedata -d --link generatedata-mysql:db -p 80:80 computerlyrik/generatedata
 ```
 
-Open (http://localhost/generatedata/install.php)
+Open [http://localhost/generatedata/install.php]
 
 For initial configuration settings see [Example settings.php](#example-settingsphp)
 
