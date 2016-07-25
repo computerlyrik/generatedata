@@ -72,3 +72,19 @@ $apiEnabled = true;
 #### Build any released version
 
 ```docker build --build-arg generatedata_version=3.2.4```
+
+## Troubleshooting
+
+#### Generating of testdata fails with memory allocation error
+
+`Solution: increase the allowed PHP memory inside generatedata-machine`
+
+- Place a `php.ini`
+```
+memory_limit = 1024M
+```
+- Have the follwing statement in your `Dockerfile`
+```
+COPY php.ini /usr/local/etc/php/
+```
+
